@@ -44,7 +44,8 @@
                                                 :values (map #(select-keys % [:timestamp :temperature]) outdoor-data)}
                                          :mark {:type :line}
                                          :encoding {:x {:field :timestamp :type :temporal}
-                                                    :y {:field :temperature :type :quantitative}}}
+                                                    :y {:field :temperature :type :quantitative}
+                                                    :tooltip [{:field :temperature :type :quantitative}]}}
                                         {:selection {:grid {:type "interval"
                                                             :bind "scales"}}
                                          :data {:name "co2"
@@ -52,7 +53,8 @@
                                          :mark {:type :line
                                                 :color "#FF0000"}
                                          :encoding {:x {:field :timestamp :type :temporal}
-                                                    :y {:field :co2 :type :quantitative}}}]
+                                                    :y {:field :co2 :type :quantitative}
+                                                    :tooltip [{:field :co2 :type :quantitative}]}}]
                                 :resolve {:scale {:y :independent}}})
                       (clj->js {:actions true}))
             (.then (fn [result] (reset! vega result))))))
