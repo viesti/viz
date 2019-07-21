@@ -1,0 +1,24 @@
+;; shadow-cljs configuration
+{:source-paths
+ ["src/dev"
+  "src/main"
+  "src/test"]
+
+ :dependencies
+ [[cljs-http "0.1.46"]
+  [testdouble/clojurescript.csv "0.4.1"]
+  [tick "0.4.13-alpha"]
+  [cljc.java-time "0.1.0"]
+  [time-literals "0.1.2"]]
+
+ :dev-http {8000 "public"}
+
+ :builds
+ {:app {:target :browser
+        :output-dir "public/js"
+        :asset-path "/js"
+
+        :modules
+        {:main
+         {:entries [net.tiuhti.app]
+          :init-fn net.tiuhti.app/init}}}}}

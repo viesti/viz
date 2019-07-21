@@ -1,0 +1,16 @@
+{
+  "name": "viz",
+  "version": "0.0.1",
+  "private": true,
+  "devDependencies": {
+    "shadow-cljs": "2.8.40"
+  },
+  "dependencies": {
+    "vega-lite": "2.7.0",
+    "vega-embed": "4.2.1",
+    "vega": "5.4.0",
+    "js-joda": "1.10.1",
+    "js-joda-timezone": "2.0.1",
+    "@js-joda/locale_en-us": "2.0.1"
+  }
+}
